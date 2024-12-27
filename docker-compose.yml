@@ -1,0 +1,28 @@
+services:
+  laravel:
+    container_name: laravel
+    build:
+      context: .
+      dockerfile: ./laravel/Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - assessment
+
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: ./react/Dockerfile
+    ports:
+      - "4173:4173"
+    depends_on:
+      - laravel
+
+volumes:
+  db_data:
+
+
+networks:
+  assessment:
+    name: assessment_network
