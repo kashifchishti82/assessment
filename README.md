@@ -73,14 +73,14 @@ Use `Assessment.postman_collection.json` file present in project tool to import 
 
 ## Screenshot
 
-![image-20241228034942489](C:\Users\LENOVO\AppData\Roaming\Typora\typora-user-images\image-20241228034942489.png)
+![image-20241228034942489](https://github.com/kashifchishti82/assessment/blob/master/graphics/image-20241228034942489.png)
 
 
 
-![image-20241228035146520](C:\Users\LENOVO\AppData\Roaming\Typora\typora-user-images\image-20241228035146520.png)
+![image-20241228035146520](https://github.com/kashifchishti82/assessment/blob/master/graphics/image-20241228035146520.png)
 
 
 
-![image-20241228035215599](C:\Users\LENOVO\AppData\Roaming\Typora\typora-user-images\image-20241228035215599.png)
+![image-20241228035215599](https://github.com/kashifchishti82/assessment/blob/master/graphics/image-20241228035215599.png)
 
-![image-20241228035258020](C:\Users\LENOVO\AppData\Roaming\Typora\typora-user-images\image-20241228035258020.png)
+![image-20241228035258020](https://github.com/kashifchishti82/assessment/blob/master/graphics/image-20241228035258020.png)
