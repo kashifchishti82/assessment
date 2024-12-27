@@ -2,6 +2,7 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 SHELL ["/bin/bash", "-c"]
+ARG DECRYPTION_KEY
 
 RUN \
   rm -rf /var/lib/apt/lists/* && \
@@ -13,12 +14,14 @@ RUN \
 
 COPY sites-available/ /etc/apache2/sites-available/
 COPY conf/common.sh .
-RUN chmod +x common.sh && perl -pi -e 's/\r\n/\n/g' common.sh 
+RUN chmod +x common.sh && perl -pi -e 's/\r\n/\n/g' common.sh
 
 WORKDIR /var/www/html
-copy ./laravel/ .
+COPY ./laravel/ .
 
-RUN composer install --no-interaction && php artisan env:decrypt
+RUN usermod -a -G www-data root && chown -R www-data:www-data /var/www/ && \
+    find /var/www/ -type d -exec chmod 2775 {} \; && find /var/www/ -type f -exec chmod 0664 {} \; && \
+    composer install --no-interaction && php artisan env:decrypt --key="$DECRYPTION_KEY"
 
 
 EXPOSE 80
